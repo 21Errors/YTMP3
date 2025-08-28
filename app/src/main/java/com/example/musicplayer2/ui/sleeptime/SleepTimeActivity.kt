@@ -1,0 +1,40 @@
+package com.example.musicplayer2.ui.sleeptime
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.example.musicplayer2.R
+
+class SleepTimeActivity : AppCompatActivity() {
+    private var sleepTimeFragment: SleepTimeFragment? = null
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_sleeptime)
+        title = "Select Sleeptime"
+
+        // Enable back button in action bar
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val fragmentManager = supportFragmentManager
+        val fragment = fragmentManager.findFragmentById(R.id.layout_sleeptime_container)
+        if (fragment == null) {
+            sleepTimeFragment = SleepTimeFragment()
+            fragmentManager.beginTransaction()
+                .add(R.id.layout_sleeptime_container, sleepTimeFragment!!)
+                .commit()
+        } else {
+            sleepTimeFragment = fragment as SleepTimeFragment
+        }
+    }
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        sleepTimeFragment!!.onBackPressed()
+    }
+
+    // Handle action bar back button
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
+
+}

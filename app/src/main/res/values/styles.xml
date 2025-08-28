@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Example reusable style -->
+    <style name="TextHeading">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/purple_700</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+</resources>

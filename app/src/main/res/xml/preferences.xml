@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_library"
+        android:title="Library">
+        <Preference
+            android:key="lib_paths"
+            android:summary="@string/prefs_summery_lib_paths"
+            android:title="@string/prefs_title_lib_paths" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_color_lens"
+        android:title="Customisation"
+        android:key="appearance_category">
+        <Preference
+            android:key="sleeptime"
+            android:summary="Put the app to sleep at a given time"
+            android:title="Sleep Timer" />
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="menu_switch"
+            android:summary="Activates the vertical menu"
+            android:title="Menu orientation" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:icon="@drawable/ic_bug_report"
+        android:title="Debugging"
+        android:key="logging_category">
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="logging"
+            android:summary="Enable saving log files for debugging"
+            android:title="Logs" />
+    </PreferenceCategory>
+
+        <Preference
+            android:icon="@drawable/about_icon_github"
+            android:summary="Main Github repository">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/21Errors/" />
+        </Preference>
+        <Preference
+            android:icon="@drawable/about_icon_github"
+            android:summary="Original OpenMusic repository">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Benji377/OpenMusic" />
+        </Preference>
+        <Preference
+            android:icon="@drawable/about_icon_google_play"
+            android:summary="App version"
+            android:key="versions">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/Benji377/OpenMusic/releases/latest" />
+        </Preference>
+
+
+    <!-- These preferences are invisible -->
+    <PreferenceCategory
+        android:enabled="false"
+        app:isPreferenceVisible="false">
+        <Preference android:key="timepicker" />
+        <Preference android:key="timepicker_switch" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

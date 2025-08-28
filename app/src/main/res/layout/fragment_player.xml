@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_blue"
+    tools:context="com.example.musicplayer2.ui.player.PlayerFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_player_holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewpager_player_song"
+            android:layout_width="match_parent"
+            android:layout_height="325dp"
+            android:layout_marginTop="100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekbar_player"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:progressTint="#D4AF37"
+            android:thumbTint="@color/coffee_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox_player_favorite" />
+
+        <TextView
+            android:id="@+id/textview_player_elapsed_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:text="0:00"
+            android:textColor="@color/coffee_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_player"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textview_player_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:text="5:99"
+            android:textColor="@color/coffee_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar_player"
+            tools:ignore="HardcodedText" />
+
+        <!-- Playback buttons unchanged, just inherit the warm background -->
+
+        <Button
+            android:id="@+id/button_player_play_pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@drawable/ic_pause"
+            app:layout_constraintBottom_toBottomOf="@+id/button_player_next"
+            app:layout_constraintEnd_toStartOf="@+id/button_player_next"
+            app:layout_constraintStart_toEndOf="@+id/button_player_prev"
+            app:layout_constraintTop_toTopOf="@+id/button_player_next" />
+
+        <Button
+            android:id="@+id/button_player_prev"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_prev"
+            android:foreground="@drawable/ic_prev"
+            app:layout_constraintBottom_toBottomOf="@+id/button_player_play_pause"
+            app:layout_constraintEnd_toStartOf="@+id/button_player_play_pause"
+            app:layout_constraintStart_toEndOf="@+id/checkbox_player_repeat"
+            app:layout_constraintTop_toTopOf="@+id/button_player_play_pause" />
+
+        <Button
+            android:id="@+id/button_player_next"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/ic_next"
+            android:foreground="@drawable/ic_next"
+            app:layout_constraintBottom_toBottomOf="@+id/checkbox_player_shuffle"
+            app:layout_constraintEnd_toStartOf="@+id/checkbox_player_shuffle"
+            app:layout_constraintStart_toEndOf="@+id/button_player_play_pause"
+            app:layout_constraintTop_toTopOf="@+id/checkbox_player_shuffle" />
+
+        <CheckBox
+            android:id="@+id/checkbox_player_shuffle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_shuffle_selector"
+            android:button="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/bar_visualizer_player"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_player_next"
+            app:layout_constraintTop_toBottomOf="@+id/textview_player_duration" />
+
+        <CheckBox
+            android:id="@+id/checkbox_player_repeat"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_repeat_selector"
+            android:button="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/button_player_prev"
+            app:layout_constraintEnd_toStartOf="@+id/button_player_prev"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/button_player_prev" />
+
+        <Button
+            android:id="@+id/button_player_queue"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="56dp"
+            android:background="@drawable/ic_queue"
+            android:foreground="@drawable/ic_queue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewpager_player_song" />
+
+        <!-- Sleep Timer Checkbox - Now properly aligned like favorites -->
+        <CheckBox
+            android:id="@+id/checkbox_player_favorite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_favorite_selector"
+            android:button="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/button_player_queue"
+            app:layout_constraintEnd_toStartOf="@+id/checkbox_player_sleep_timer"
+            app:layout_constraintStart_toEndOf="@+id/button_player_queue"
+            app:layout_constraintTop_toTopOf="@+id/button_player_queue"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <CheckBox
+            android:id="@+id/checkbox_player_sleep_timer"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/ic_sleep_timer_selector"
+            android:button="@android:color/transparent"
+            app:layout_constraintBottom_toBottomOf="@+id/checkbox_player_favorite"
+            app:layout_constraintEnd_toStartOf="@+id/button_player_addtoplaylist"
+            app:layout_constraintStart_toEndOf="@+id/checkbox_player_favorite"
+            app:layout_constraintTop_toTopOf="@+id/checkbox_player_favorite"
+            app:layout_constraintVertical_bias="0.6" />
+
+        <Button
+            android:id="@+id/button_player_addtoplaylist"
+            android:layout_width="25dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="334dp"
+            android:layout_marginTop="59dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/ic_playlist_add"
+            android:foreground="@drawable/ic_playlist_add"
+            app:layout_constraintBottom_toBottomOf="@+id/seekbar_player"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/seekbar_player"
+            app:layout_constraintTop_toBottomOf="@+id/viewpager_player_song" />
+
+        <ProgressBar
+            android:id="@+id/bar_visualizer_player"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="387dp"
+            android:layout_height="5dp"
+            android:layout_marginBottom="16dp"
+            android:indeterminate="false"
+            android:progress="50"
+            android:progressTint="@color/sunset_accent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

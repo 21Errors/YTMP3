@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.musicplayer2">
+
+    <!-- Permissions from both manifests -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+    <!-- Extra permissions from the old manifest -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- ADD THIS: Required for sleep timer exact alarms -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <uses-permission android:name="android.permission.MEDIA_CONTENT_CONTROL"
+        tools:ignore="ProtectedPermissions" />
+
+    <application
+        android:name="com.example.musicplayer2.OpenMusicApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/all_app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MusicPlayer"
+        tools:targetApi="s">
+
+        <!-- Your service -->
+        <service
+            android:name=".ConversionService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync" />
+
+        <!-- FIXED: Old app's media player service with proper foreground service type -->
+        <service
+            android:name="com.example.musicplayer2.MediaPlayerService"
+            android:stopWithTask="false"
+            android:foregroundServiceType="mediaPlayback"
+            android:exported="false" />
+
+        <!-- Starting activity is now MainActivity from the old app -->
+        <activity
+            android:name="com.example.musicplayer2.ui.main.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other activities from both manifests -->
+        <activity android:name=".YTConverterActivity" android:exported="true" />
+
+
+        <activity android:name=".PlaylistConverterActivity" android:exported="true" />
+
+        <activity android:name="com.example.musicplayer2.ui.album.AlbumActivity" />
+        <activity android:name="com.example.musicplayer2.ui.playlist.PlaylistActivity" />
+        <activity android:name="com.example.musicplayer2.ui.settings.SettingsActivity" />
+        <activity android:name="com.example.musicplayer2.ui.dir_browser.DirBrowserActivity" />
+        <activity android:name="com.example.musicplayer2.ui.sleeptime.SleepTimeActivity" />
+        <activity android:name="com.example.musicplayer2.ui.search.SearchActivity" />
+        <activity android:name="com.example.musicplayer2.ui.player_song_info.SonginfoActivity" />
+
+        <!-- Media button receiver -->
+        <receiver
+            android:name="androidx.media.session.MediaButtonReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Bluetooth receiver -->
+        <receiver
+            android:name="com.example.musicplayer2.utils.BluetoothUtil"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUEST" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".ui.sleeptime.SleepTimeReceiver"
+            android:enabled="true"
+            android:exported="false" />
+
+    </application>
+
+</manifest>

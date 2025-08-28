@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme for dark mode -->
+    <style name="Theme.MusicPlayer" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary colors -->
+        <item name="colorPrimary">#D4AF37</item>
+        <item name="colorPrimaryVariant">#004a9a</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+
+        <!-- Secondary colors -->
+        <item name="colorSecondary">#badcff</item>
+        <item name="colorOnSecondary">@android:color/black</item>
+
+        <!-- Background & surface -->
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:statusBarColor">#004a9a</item>
+    </style>
+
+</resources>

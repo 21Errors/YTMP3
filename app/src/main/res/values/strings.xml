@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name" translatable="false">Music Player</string>
+    <string name="all_app_name">Music Player</string>
+    <string name="all_album_art_desc">Album art</string>
+    <string name="albums_tab_list_empty">No albums found</string>
+    <string name="all_songs_list_empty">No songs found</string>
+    <string name="dir_browser_folder_list_empty">No folders found</string>
+    <string name="sleepTimeDescription">No Sleep Timer Description</string>
+    <string name="activate_sleeptime_function">Activate Sleep Timer</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">No folders found</string>
+
+    <string name="playlist_tab_list_empty">No playlists found</string>
+    <string name="prefs_title_lib_paths">No titles found</string>
+    <string name="prefs_summery_lib_paths">No summary libraries found</string>
+    <string name="main_menu_item_about">No main menu item about found</string>
+    <string name="about_description">No about description found</string>
+    <string name="notif_previous">Previous</string>
+    <string name="notif_play">Play</string>
+    <string name="notif_pause">Pause</string>
+    <string name="notif_next">Next</string>
+    <string name="notif_channel_media_name">Media Playback</string>
+    <string name="notif_channel_media_description">Notifications for media playback controls</string>
+    <string name="all_playlist_favorites_name">Favorites</string>
+    <string name="all_song_count">All songs</string>
+    <string name="main_err_file_gone">Main Error File gone</string>
+    <string name="dir_browser_title">Directory Browser Title</string>
+    <string name="dir_browser_folder_unreadable">Directory Browser Unreadable</string>
+    <string name="dir_browser_internal_storage">Directory Browser Internal Storage</string>
+    <string name="dir_browser_sd_card">Directory Browser SD Card</string>
+    <string-array name="main_tabs">
+        <item>All Songs</item>
+        <item>Albums</item>
+        <item>Playlists</item>
+        <item>Converter</item>
+        <item>Search</item>
+        <item>Settings</item>
+    </string-array>
+    <string name="all_loading_library">All loading library</string>
+    <string name="all_reloading_library">All reloading library</string>
+    <string name="main_menu_item_settings">Main Menu Item Settings</string>
+    <string name="settings_cannot_change_lib">Settings Cannot Change Library</string>
+    <string name="about_version">About Version</string>
+    <string name="add_to_playlist_dialog_title">Add to playlist dialog title</string>
+    <string name="add_to_playlist_dialog_new">Add to playlist dialog new</string>
+    <string name="add_to_playlist_dialog_add_anyway">Add to playlist dialog add anyway</string>
+    <string name="add_to_playlist_dialog_already_in_playlist">Add to playlist dialog already in playlist</string>
+    <string name="all_yes">Yes</string>
+    <string name="all_no">No</string>
+    <string name="all_create">Create</string>
+
+    <!-- New playlist dialog strings -->
+    <string name="new_playlist_dialog_title">New Playlist</string>
+    <string name="new_playlist_dialog_enter_name">Enter playlist name</string>
+
+    <!-- Delete playlist dialog strings -->
+    <string name="delete_playlist_dialog_title">Delete Playlist</string>
+    <string name="delete_playlist_dialog_confirm">Are you sure you want to delete this playlist?</string>
+
+
+</resources>

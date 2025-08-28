@@ -1,0 +1,53 @@
+<resources>
+    <string name="all_app_name">OpenMusic</string>
+
+    <string name="all_songs_list_empty">Nessun brano trovato…</string>
+    <string name="playlist_tab_list_empty">Nessuna playlist trovata</string>
+    <string name="main_err_file_gone">File spostato o eliminato.</string>
+
+    <string name="main_menu_item_about">Informazioni</string>
+    <string name="main_menu_item_settings">Impostazioni</string>
+
+    <string name="about_description">OpenMusic è un lettore musicale Android open source scritto in Java a cui tutti possono contribuire.</string>
+    <string name="about_version">Versione %s</string>
+
+    <string name="notif_channel_media_name">Canale multimediale</string>
+    <string name="notif_channel_media_description">Canale multimediale per la riproduzione audio</string>
+    <string name="notif_previous">Precedente</string>
+    <string name="notif_pause">Pausa</string>
+    <string name="notif_play">Play</string>
+    <string name="notif_next">Prossimo</string>
+
+    <string name="dir_browser_title">Seleziona cartella</string>
+    <string name="dir_browser_internal_storage">Memoria interna</string>
+    <string name="dir_browser_sd_card">SD scheda (%s)</string>
+    <string name="dir_browser_folder_list_empty">La cartella è vuota</string>
+    <string name="dir_browser_folder_unreadable">Impossibile accedere alla cartella</string>.
+    <string name="prefs_title_lib_paths">Cartelle della libreria</string>
+    <string name="prefs_summery_lib_paths">Configura dove cercare i brani sul tuo dispositivo.</string>
+    <string name="prefs_summery_theme">Scegli i colori primari della tua app</string>
+    <string name="prefs_title_theme">Tema</string>
+
+    <string name="all_album_art_desc">Miniatura della canzone</string>
+    <string name="all_playlist_favorites_name">Favoriti</string>
+    <string name="all_create">Crea</string>
+    <string name="all_song_count">%d Canzoni</string>
+    <string name="all_no">No</string>
+    <string name="all_yes">Sì</string>
+
+    <string name="activate_sleeptime_function">Attiva la funzionalità SleepTime</string>
+    <string name="delete_playlist_dialog_confirm">Sei sicuro/a di voler cancellare questa playlist?</string>
+    <string name="add_to_playlist_dialog_new">Crea una nuova playlist…</string>
+    <string name="delete_playlist_dialog_title">Cancella playlist</string>
+    <string name="add_to_playlist_dialog_add_anyway">Vuoi aggiungerlo comunque?</string>
+    <string name="new_playlist_dialog_enter_name">Inserisci il nome della playlist…</string>
+    <string name="all_loading_library">Sto cercando canzoni sul tuo dispositivo…</string>
+    <string name="new_playlist_dialog_title">Nuova playlist</string>
+    <string name="albums_tab_list_empty">Nessun album trovato</string>
+    <string name="settings_cannot_change_lib">Non sono ancora state caricate tutte le canzoni, perfavore attendi</string>
+    <string name="all_reloading_library">Ricaricamento delle canzoni…</string>
+    <string name="timepicker_button">Salva le impostazioni selezionate</string>
+    <string name="add_to_playlist_dialog_title">Seleziona playlist:</string>
+    <string name="add_to_playlist_dialog_already_in_playlist">Canzone esiste già nella playlist</string>
+    <string name="sleepTimeDescription">La funzionalità SleepTime consente di impostare un orario in cui l\'app interromperà la riproduzione di musica e si chiuderà. Per consentire questa funzionalità è necessario impostare l\'interruttore sottostante su ON e impostare un tempo sopra.</string>
+</resources>
