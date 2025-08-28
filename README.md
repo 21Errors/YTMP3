@@ -5,7 +5,7 @@ Convert YouTube playlists to MP3 and play your music with a UI still in the work
 
 
 ## Download
-- [Latest Release (APK/EXE)](https://github.com/21Errors/YTMP3/releases/download/v1.0.0/app-release.apk)
+- [Latest Release (APK/EXE)](https://github.com/21Errors/YTMP3/releases/download/v1.0.0/YTMP3.apk)
 
 
 ##  Screenshots
